@@ -41,6 +41,7 @@ export default {
   .image__block{
     width: 31%;
     margin-top: 30px;
+    cursor: pointer;
   }
   .image__block img{
     width: 100%;
@@ -49,4 +50,13 @@ export default {
     max-height: 440px;
     object-fit: cover;
   }
+  @media(max-width:800px){
+    .image__block{
+      width:100%;
+    }
+    .image__block img{
+      max-width: none;
+    }
+  }
+
 </style>

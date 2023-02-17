@@ -14,10 +14,10 @@
                   </div>
                 </div>
                 <div class="modal__actions">
-                  <div @click="$store.commit('addToLikes', bigImage)" class="modal__like">
+                  <div  @click="$store.commit('addToLikes', this.bigImage)" class="modal__like">
                     <img src="../assets/like_black.svg" alt="">
                   </div>
-                  <div @click="" class="modal__downloand">{{$store.getters.lengthLikes}} Downloand</div>
+                  <div @click="downloadPhoto" class="modal__downloand">Downloand</div>
                 </div>
               </div>
               <div class="modal__image">
@@ -31,27 +31,35 @@
 </template>
 
 <script>
+import svgIcon from '../assets/like_black.svg';
 export default {
   name: "BigImage",
   data() {
     return {
       accessKey: '0yC2q2TbgoMTm5t0pRpYktvhBTH780A2L7sYEPaHqmo',
       url: 'https://api.unsplash.com/photos/',
-      bigImage: {}
+      bigImage: {},
     }
   },
   created(){
-      let url = this.url + `${this.$route.params.id}?client_id=${this.accessKey}`;
-      fetch(url).then((response) =>{
-        return response.json()
-      }).then((json)=>{
-        console.log('json',json)
-        this.bigImage = json;
-      }).catch((err)=>{
-        console.log('err',err)
-      })
+    let url = this.url + `${this.$route.params.id}?client_id=${this.accessKey}`;
+    fetch(url).then((response) =>{
+      return response.json()
+    }).then((json)=>{
+      this.bigImage = json;
+    }).catch((err)=>{
+      console.log('err',err)
+    })
+    let liked = this.$store.commit('findThat', this.bigImage);
+    console.log(document.querySelector(".modal__like"));
+    if (liked){
+      document.querySelector(".modal__like").classList.add("liked");
+    }
   },
   methods:{
+    downloadPhoto(){
+
+    }
   },
 }
 </script>
@@ -111,6 +119,7 @@ export default {
     background-color: white;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    cursor: pointer;
   }
   .modal__downloand{
     margin-left: 20px;
@@ -122,8 +131,12 @@ export default {
     border: 1px solid #FFF200;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    text-decoration: none;
   }
   .modal__image img{
     width: 100%;
+  }
+  .liked{
+    display: none;
   }
 </style>
