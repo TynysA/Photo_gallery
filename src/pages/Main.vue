@@ -73,7 +73,4 @@ export default {
 .main {
   margin-bottom: 40px;
 }
-.container {
-  padding: 0px 12%;
-}
 </style>

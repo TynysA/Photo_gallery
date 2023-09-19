@@ -60,9 +60,6 @@ input[type="search"]::-webkit-search-results-decoration {
   z-index: 2;
   background: rgba(0, 0, 0, 0.5);
 }
-.container {
-  padding: 0px 12%;
-}
 .search__inner {
   position: relative;
   z-index: 5;

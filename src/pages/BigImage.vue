@@ -114,9 +114,6 @@ export default {
   background-size: cover;
   padding-bottom: 60px;
 }
-.container {
-  padding: 0px 12%;
-}
 .modal__inner {
   margin-top: 20px;
 }
@@ -129,6 +126,8 @@ export default {
 .modal__icon img {
   border: 1px solid #ffffff;
   border-radius: 8px;
+  width: 100%;
+  height: 100%;
 }
 .modal__header {
   display: flex;
@@ -190,13 +189,25 @@ export default {
 }
 @media (max-width: 740px) {
   .modal__icon {
-    margin-right: 4px;
+    margin-right: 10px;
+    min-width: 44px;
+    width: 44px;
+    height: 44px;
+  }
+  .modal__info {
+    line-height: 22px;
+  }
+  .modal__name {
+    font-size: 22px;
+  }
+  .modal__username {
+    font-size: 18px;
   }
   .modal__like {
-    padding: 10px;
+    padding: 9px;
   }
   .modal__download {
-    padding: 0 10px;
+    padding: 0 9px;
     margin-left: 8px;
     font-size: 0;
   }

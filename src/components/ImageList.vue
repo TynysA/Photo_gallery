@@ -27,9 +27,6 @@ export default {
   .images{
     margin-top: 37px;
   }
-  .container{
-    padding: 0px 12%;
-  }
   .images__inner{
     width: 100%;
     display: flex;
@@ -50,7 +47,7 @@ export default {
     max-height: 440px;
     object-fit: cover;
   }
-  @media(max-width:800px){
+  @media(max-width:740px){
     .image__block{
       width:100%;
     }

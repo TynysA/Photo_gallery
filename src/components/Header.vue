@@ -29,9 +29,6 @@ export default {
   background: #000000;
 }
 
-.container {
-  padding: 0px 12%;
-}
 .header__inner {
   display: flex;
   justify-content: space-between;

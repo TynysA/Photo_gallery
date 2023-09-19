@@ -33,7 +33,7 @@ export default {
   font-size: 54px;
   font-weight: 600;
 }
-@media (max-width: 800px) {
+@media (max-width: 740px) {
   .likes__title {
     font-size: 44px;
   }
